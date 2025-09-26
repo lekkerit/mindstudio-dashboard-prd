@@ -1,0 +1,139 @@
+{
+  "autoApprove": [
+    {
+      "tool": "Read",
+      "description": "Auto-approve reading any file for development and debugging"
+    },
+    {
+      "tool": "Write",
+      "description": "Auto-approve writing files for development (excluding dangerous operations)"
+    },
+    {
+      "tool": "Edit",
+      "description": "Auto-approve editing existing files for development"
+    },
+    {
+      "tool": "MultiEdit",
+      "description": "Auto-approve multiple edits to files for efficient development"
+    },
+    {
+      "tool": "Glob",
+      "description": "Auto-approve file pattern matching for code exploration"
+    },
+    {
+      "tool": "Grep",
+      "description": "Auto-approve text search operations for development"
+    },
+    {
+      "tool": "Bash",
+      "patterns": [
+        "npm install*",
+        "npm run*",
+        "npm start*",
+        "npm build*",
+        "npm test*",
+        "yarn*",
+        "git status*",
+        "git add*",
+        "git commit*",
+        "git push*",
+        "git pull*",
+        "git diff*",
+        "git log*",
+        "git branch*",
+        "git checkout*",
+        "ls*",
+        "pwd*",
+        "cd*",
+        "cat*",
+        "head*",
+        "tail*",
+        "grep*",
+        "find*",
+        "mkdir*",
+        "touch*",
+        "echo*",
+        "node*",
+        "python*",
+        "code*",
+        "vscode*"
+      ],
+      "description": "Auto-approve common safe development commands"
+    },
+    {
+      "tool": "Task",
+      "description": "Auto-approve launching specialized agents for complex tasks"
+    },
+    {
+      "tool": "WebFetch",
+      "description": "Auto-approve web content fetching for research and documentation"
+    },
+    {
+      "tool": "WebSearch",
+      "description": "Auto-approve web searches for development research"
+    },
+    {
+      "tool": "TodoWrite",
+      "description": "Auto-approve task management and progress tracking"
+    }
+  ],
+  "denyPatterns": [
+    {
+      "tool": "Bash",
+      "patterns": [
+        "rm *",
+        "rmdir*",
+        "rm -rf*",
+        "rm -r*",
+        "delete*",
+        "del*",
+        "format*",
+        "fdisk*",
+        "dd *",
+        "shutdown*",
+        "reboot*",
+        "halt*",
+        "kill -9*",
+        "killall*",
+        "chmod 777*",
+        "chown root*",
+        "sudo rm*",
+        "sudo delete*",
+        "> /dev/*",
+        "curl * | bash",
+        "wget * | bash",
+        "curl * | sh",
+        "wget * | sh"
+      ],
+      "description": "Deny potentially dangerous file operations and system commands"
+    }
+  ],
+  "settings": {
+    "confirmDangerousOperations": true,
+    "logAutoApprovals": false,
+    "allowFileCreation": true,
+    "allowFileModification": true,
+    "restrictSystemAccess": true
+  },
+  "projectContext": {
+    "name": "MindStudio Dashboard",
+    "type": "React/Vite Web Application",
+    "description": "Production-ready dashboard with MindStudio AI agent integration",
+    "safeOperations": [
+      "Reading project files",
+      "Editing React components and configuration",
+      "Running npm/yarn commands for development",
+      "Git operations for version control",
+      "File system navigation and exploration",
+      "Creating new files and directories",
+      "Web research for development"
+    ],
+    "restrictedOperations": [
+      "Deleting files or directories",
+      "System-level operations",
+      "Modifying system files",
+      "Network operations that could be harmful",
+      "Installing system-level packages"
+    ]
+  }
+}
